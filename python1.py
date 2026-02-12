@@ -6,7 +6,7 @@ import json
 
 driver = webdriver.Chrome()
 wait = WebDriverWait(driver, 10)
-driver.get('https://www.scrapethissite.com/pages/ajax-javascript/')
+driver.get('https://www.scrapethissite.com/pages/ajax-javascript/  ')
 
 years = [2012, 2013, 2014, 2015]
 
@@ -30,7 +30,7 @@ for year in years:
         awards = int(awards)
         
         film_info = {
-            "year": str(year),
+            "year": year,
             "title": title,
             "nominations": nominations,
             "awards": awards
@@ -42,4 +42,7 @@ for year in years:
         json.dump(films_data, f, indent=4, ensure_ascii=False)
     
     print(f"Сохранен файл: {filename} с {len(films_data)} фильмами")
+
+print("Готово") 
+
 driver.quit()
